@@ -16,9 +16,11 @@ else:
         hostname = args[1]
         port = int(args[2])
         address = (hostname, port)
+
         client_socket.connect(address)
 
         data = args[3].encode()
+
         client_socket.send(data)
 
         response = client_socket.recv(1024)
