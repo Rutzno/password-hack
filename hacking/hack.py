@@ -12,20 +12,18 @@ args = sys.argv
 if len(args) != 4:
     print("The script should be called with three arguments, the hostname, the port and the data to send")
 else:
-    client_socket = socket.socket()
-    hostname = args[1]
-    port = int(args[2])
-    address = (hostname, port)
+    with socket.socket() as client_socket:
+        hostname = args[1]
+        port = int(args[2])
+        address = (hostname, port)
 
-    client_socket.connect(address)
+        client_socket.connect(address)
 
-    data = args[3].encode()
+        data = args[3].encode()
 
-    client_socket.send(data)
+        client_socket.send(data)
 
-    response = client_socket.recv(1024)
-    response = response.decode()
+        response = client_socket.recv(1024)
+        response = response.decode()
 
-    print(response)
-
-    client_socket.close()
+        print(response)
