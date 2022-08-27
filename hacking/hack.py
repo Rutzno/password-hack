@@ -21,10 +21,6 @@ else:
         data = args[3].encode()
         client_socket.send(data)
 
-        # if data == "qwerty":
-        #     print("Connection Success!")
-        # else:
-        #     print("Wrong password!")
         response = client_socket.recv(1024)
         response = response.decode()
 
