@@ -12,7 +12,7 @@ args = sys.argv
 if len(args) != 4:
     print("The script should be called with three arguments, the hostname, the port and the data to send")
 else:
-    with socket.socket() as client_socket:
+    with socket.socket() as client_socket:  # creating the socket with context manager
         hostname = args[1]
         port = int(args[2])
         address = (hostname, port)
