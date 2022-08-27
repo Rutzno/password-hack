@@ -21,9 +21,9 @@ else:
 
         data = args[3].encode()  # converting to bytes
 
-        client_socket.send(data)
+        client_socket.send(data)  # sending through socket
 
-        response = client_socket.recv(1024)
-        response = response.decode()
+        response = client_socket.recv(1024)  # receiving the response
+        response = response.decode()  # decoding from bytes to string
 
         print(response)
