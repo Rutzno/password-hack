@@ -7,7 +7,6 @@ __since__ = "28/8/2021"
 __version__ = "1.0.1"
 """
 
-# parser = argparse.ArgumentParser()
 args = sys.argv
 
 if len(args) != 4:
