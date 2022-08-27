@@ -2,6 +2,12 @@ import socket
 import argparse
 import sys
 
+"""
+__author__ = "Mack_TB"
+__since__ = "28/8/2021"
+__version__ = "1.0.1"
+"""
+
 # parser = argparse.ArgumentParser()
 args = sys.argv
 
