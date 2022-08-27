@@ -17,9 +17,9 @@ else:
         port = int(args[2])
         address = (hostname, port)
 
-        client_socket.connect(address)
+        client_socket.connect(address)  # connecting to the server
 
-        data = args[3].encode()
+        data = args[3].encode()  # converting to bytes
 
         client_socket.send(data)
 
