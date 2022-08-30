@@ -38,11 +38,3 @@ if __name__ == "__main__":
                     break
                 i += 1
 
-            # password = args[3].encode()  # converting to bytes
-            #
-            # client_socket.send(password)  # sending through socket
-            #
-            # response = client_socket.recv(1024)  # receiving the response
-            # response = response.decode()  # decoding from bytes to string
-            #
-            # print(response)
