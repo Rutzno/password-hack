@@ -31,6 +31,7 @@ if __name__ == "__main__":
 
                     response = client_socket.recv(1024)  # receiving the response
                     response = response.decode()  # decoding from bytes to string
+
                     if response == "Connection success!":
                         print(password)
                         break
