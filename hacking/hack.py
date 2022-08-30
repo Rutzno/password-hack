@@ -1,7 +1,6 @@
 import argparse
 import itertools
 import socket
-import sys
 
 """
 __author__ = "Mack_TB"
