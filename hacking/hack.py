@@ -26,7 +26,7 @@ if __name__ == "__main__":
             response = ""
             while response != "Connection success!":
                 for tup in itertools.product(chars, repeat=i):
-                    password = "".join(tup)
+                    password = "".join(tup)  # converting tuple to string
                     client_socket.send(password.encode())  # sending through socket
 
                     response = client_socket.recv(1024)  # receiving the response
