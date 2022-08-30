@@ -17,6 +17,22 @@ def get_arguments():
     return parser.parse_args()
 
 
+def generate_password(cl_socket, characters):
+    i = 1
+    response = ""
+    while response != "Connection success!":
+        for tup in itertools.product(characters, repeat=i):
+            password = "".join(tup)
+            cl_socket.send(password.encode())  # sending through socket
+
+            response = cl_socket.recv(1024)  # receiving the response
+            response = response.decode()  # decoding from bytes to string
+            if response == "Connection success!":
+                print(password)
+                break
+        i += 1
+
+
 if __name__ == "__main__":
     args = get_arguments()
 
@@ -28,17 +44,4 @@ if __name__ == "__main__":
         client_socket.connect(address)  # connecting to the server
 
         chars = "abcdefghijklmnopqrstuvwxyz0123456789"
-        i = 1
-        response = ""
-        while response != "Connection success!":
-            for tup in itertools.product(chars, repeat=i):
-                password = "".join(tup)
-                client_socket.send(password.encode())  # sending through socket
-
-                response = client_socket.recv(1024)  # receiving the response
-                response = response.decode()  # decoding from bytes to string
-                if response == "Connection success!":
-                    print(password)
-                    break
-            i += 1
-
+        generate_password(client_socket, chars)
