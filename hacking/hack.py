@@ -23,7 +23,8 @@ if __name__ == "__main__":
 
             chars = "abcdefghijklmnopqrstuvwxyz0123456789"
             i = 1
-            while i <= 1000000:
+            response = ""
+            while response != "Connection success!":
                 for s in itertools.product(chars, repeat=i):
                     password = "".join(s)
                     client_socket.send(password.encode())  # sending through socket
@@ -33,7 +34,6 @@ if __name__ == "__main__":
                     if response == "Connection success!":
                         print(password)
                         break
-                if response == "Connection success!":
-                    break
+
                 i += 1
 
