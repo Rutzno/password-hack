@@ -25,8 +25,8 @@ if __name__ == "__main__":
             i = 1
             response = ""
             while response != "Connection success!":
-                for s in itertools.product(chars, repeat=i):
-                    password = "".join(s)
+                for tup in itertools.product(chars, repeat=i):
+                    password = "".join(tup)
                     client_socket.send(password.encode())  # sending through socket
 
                     response = client_socket.recv(1024)  # receiving the response
