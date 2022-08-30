@@ -9,11 +9,16 @@ __since__ = "28/8/2021"
 __version__ = "1.0.2"
 """
 
-if __name__ == "__main__":
+
+def get_arguments():
     parser = argparse.ArgumentParser(description="A script to guess password")
     parser.add_argument("hostname", type=str, help="IP address or domain name")
     parser.add_argument("port", type=int, help="Port number")
-    args = parser.parse_args()
+    return parser.parse_args()
+
+
+if __name__ == "__main__":
+    args = get_arguments()
 
     with socket.socket() as client_socket:  # creating the socket with context manager
         hostname = args.hostname
