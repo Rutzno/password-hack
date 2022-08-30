@@ -34,6 +34,9 @@ if __name__ == "__main__":
                     if response == "Connection success!":
                         print(password)
                         break
+                if response == "Connection success!":
+                    print(password)
+                    break
                 i += 1
 
             # password = args[3].encode()  # converting to bytes
