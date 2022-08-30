@@ -35,7 +35,6 @@ if __name__ == "__main__":
                         print(password)
                         break
                 if response == "Connection success!":
-                    print(password)
                     break
                 i += 1
 
