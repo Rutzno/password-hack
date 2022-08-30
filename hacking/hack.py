@@ -22,7 +22,6 @@ if __name__ == "__main__":
             client_socket.connect(address)  # connecting to the server
 
             chars = "abcdefghijklmnopqrstuvwxyz0123456789"
-
             i = 1
             while i <= 1000000:
                 for s in itertools.product(chars, repeat=i):
