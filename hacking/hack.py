@@ -16,7 +16,7 @@ def get_arguments():
     return parser.parse_args()
 
 
-def generate_password(cl_socket, characters):
+def bruteforce(cl_socket, characters):
     i = 1
     response = ""
     while response != "Connection success!":
@@ -43,4 +43,4 @@ if __name__ == "__main__":
         client_socket.connect(address)  # connecting to the server
 
         chars = "abcdefghijklmnopqrstuvwxyz0123456789"
-        generate_password(client_socket, chars)
+        bruteforce(client_socket, chars)
