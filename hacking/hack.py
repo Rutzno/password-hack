@@ -5,7 +5,7 @@ import socket
 """
 __author__ = "Mack_TB"
 __since__ = "28/8/2021"
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 """
 
 
