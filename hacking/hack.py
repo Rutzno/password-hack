@@ -64,4 +64,4 @@ if __name__ == "__main__":
         path = "C:\\Users\\hp\\PycharmProjects\\password-hack\\hacking\\passwords.txt"
         with open(path, "r") as file:
             bruteforce_with_dict(client_socket, file)
-        file.close()
+
