@@ -35,7 +35,7 @@ def bruteforce(cl_socket, characters):
 def bruteforce_with_dict(cl_socket, f):
     for word in f:
         password = word.rstrip("\n")
-        chars = [[c] if c.isdigit() else [c, c.upper()] for c in password]
+        chars = [[c] if c.isdigit() else [c.lower(), c.upper()] for c in password]
         for tup in itertools.product(*chars):  # test with different cases
             password = "".join(tup)
 
