@@ -32,6 +32,28 @@ def bruteforce(cl_socket, characters):
         i += 1
 
 
+def bruteforce_with_dict(cl_socket, f):
+    for word in f:
+        password = word.rstrip("\n")
+        chars = []
+        for c in password:
+            if c.isdigit():
+                tmp = [c]
+            else:
+                tmp = [c, c.upper()]
+            chars.append(tmp)
+        for tup in itertools.product(*chars):  # test with different cases
+            password = "".join(tup)
+
+            cl_socket.send(password.encode())  # sending through socket
+
+            response = cl_socket.recv(1024)  # receiving the response
+            response = response.decode()  # decoding from bytes to string
+            if response == "Connection success!":
+                print(password)
+                return
+
+
 if __name__ == "__main__":
     args = get_arguments()
 
