@@ -62,6 +62,6 @@ if __name__ == "__main__":
         # bruteforce(client_socket, chars)
 
         path = "C:\\Users\\hp\\PycharmProjects\\password-hack\\hacking\\passwords.txt"
-        file = open(path, "r")
-        bruteforce_with_dict(client_socket, file)
+        with open(path, "r") as file:
+            bruteforce_with_dict(client_socket, file)
         file.close()
