@@ -73,7 +73,7 @@ When an exception occurs, we know that we found the first letter of the password
 Use the found login and the found letter to find the second letter of the password.
 Repeat until we receive the "success" message.
 """
-def bruteforcelp_with_dict(cl_socket, f):
+def bflp_with_dict_n_ce(cl_socket, f):
     for word in f:
         password = word.rstrip("\n")
         chars = [[c] if c.isdigit() else [c, c.upper()] for c in password]
@@ -123,4 +123,4 @@ if __name__ == "__main__":
 
         path = "C:\\Users\\hp\\PycharmProjects\\password-hack\\hacking\\logins.txt"
         with open(path, "r") as file:
-            bruteforcelp_with_dict(client_socket, file)
+            bflp_with_dict_n_ce(client_socket, file)
