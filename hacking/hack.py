@@ -84,18 +84,15 @@ def bruteforcelp_with_dict(cl_socket, f):
                         response = cl_socket.recv(1024)  # receiving the response
                         response = response.decode()  # decoding from bytes to string
                         response = json.loads(response)
-                        # print(response)
                         if response["result"] == "Wrong password!":
                             tmp = password
                         elif response["result"] == "Exception happened during login":
                             password = tmp
-                            # print(password)
                             i = 0
                         elif response["result"] == "Connection success!":
                             print(json_str)
                             return
                     i += 1
-    # return None
 
 
 if __name__ == "__main__":
