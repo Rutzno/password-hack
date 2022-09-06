@@ -48,6 +48,14 @@ def bruteforce_with_dict(cl_socket, f):
                 return
 
 
+def set_credentials(login, password):
+    return {
+        "login": login,
+        "password": password
+    }
+
+
+
 def bruteforcelp_with_dict(cl_socket, f):
     for word in f:
         password = word.rstrip("\n")
