@@ -57,7 +57,7 @@ def set_credentials(login, password=""):
 
 
 def send_n_recv(cl_socket, credentials):
-    json_str = json.dumps(credentials)
+    json_str = json.dumps(credentials, indent=4)
     cl_socket.send(json_str.encode())  # sending through socket
 
     response = cl_socket.recv(1024)  # receiving the response
@@ -74,6 +74,7 @@ Use the found login and the found letter to find the second letter of the passwo
 Repeat until we receive the "success" message.
 """
 def bflp_with_dict_n_ce(cl_socket, f):
+    #  searching for a login
     for word in f:
         password = word.rstrip("\n")
         chars = [[c] if c.isdigit() else [c, c.upper()] for c in password]
@@ -86,6 +87,7 @@ def bflp_with_dict_n_ce(cl_socket, f):
                 i = 0
                 tmp = ""
                 password = ""
+                #  searching for a password
                 while i < len(chars):
                     for c in [chars[i], chars[i].upper()]:
                         tmp += c
