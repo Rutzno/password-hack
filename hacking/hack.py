@@ -112,9 +112,9 @@ if __name__ == "__main__":
         # bruteforce(client_socket, chars)
 
         # path = "C:\\Users\\hp\\PycharmProjects\\password-hack\\hacking\\passwords.txt"
-        with open("passwords.txt", "r") as file:
-            bruteforce_with_dict(client_socket, file)
+        # with open("passwords.txt", "r") as file:
+        #     bruteforce_with_dict(client_socket, file)
 
-        path = "C:\\Users\\hp\\PycharmProjects\\jba\\Password Hacker\\Password Hacker\\task\\hacking\\logins.txt"
+        path = "C:\\Users\\hp\\PycharmProjects\\password-hack\\hacking\\logins.txt"
         with open(path, "r") as file:
             bruteforcelp_with_dict(client_socket, file)
