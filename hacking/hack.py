@@ -90,6 +90,7 @@ def bruteforcelp_with_dict(cl_socket, f):
                             password = tmp
                             i = 0
                         elif response["result"] == "Connection success!":
+                            json_str = data[0]
                             print(json_str)
                             return
                     i += 1
