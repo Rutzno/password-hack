@@ -49,7 +49,7 @@ def bruteforce_with_dict(cl_socket, f):
                 return
 
 
-def set_credentials(login, password):
+def set_credentials(login, password=""):
     return {
         "login": login,
         "password": password
@@ -71,7 +71,7 @@ def bruteforcelp_with_dict(cl_socket, f):
         chars = [[c] if c.isdigit() else [c, c.upper()] for c in password]
         for tup in itertools.product(*chars):  # test with different cases
             login = "".join(tup)
-            credentials = set_credentials(login, "")
+            credentials = set_credentials(login)
             response = send_n_recv(cl_socket, credentials)[1]
             if response["result"] == "Wrong password!":
                 chars = "abcdefghijklmnopqrstuvwxyz0123456789"
