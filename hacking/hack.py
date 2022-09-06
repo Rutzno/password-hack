@@ -82,12 +82,8 @@ def bruteforcelp_with_dict(cl_socket, f):
                     for c in [chars[i], chars[i].upper()]:
                         tmp += c
                         credentials = set_credentials(login, tmp)
-                        json_str = json.dumps(credentials)
-                        cl_socket.send(json_str.encode())  # sending through socket
-
-                        response = cl_socket.recv(1024)  # receiving the response
-                        response = response.decode()  # decoding from bytes to string
-                        response = json.loads(response)
+                        data = send_n_recv(cl_socket, credentials)
+                        response = data[1]
                         if response["result"] == "Wrong password!":
                             tmp = password
                         elif response["result"] == "Exception happened during login":
