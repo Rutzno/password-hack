@@ -1,5 +1,6 @@
 import argparse
 import itertools
+import json
 import socket
 
 """
@@ -53,7 +54,6 @@ def set_credentials(login, password):
         "login": login,
         "password": password
     }
-
 
 
 def bruteforcelp_with_dict(cl_socket, f):
