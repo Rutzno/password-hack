@@ -56,6 +56,15 @@ def set_credentials(login, password):
     }
 
 
+def send_n_recv(cl_socket, credentials):
+    json_str = json.dumps(credentials)
+    cl_socket.send(json_str.encode())  # sending through socket
+
+    response = cl_socket.recv(1024)  # receiving the response
+    response = response.decode()  # decoding from bytes to string
+    return json_str, json.loads(response)
+
+
 def bruteforcelp_with_dict(cl_socket, f):
     for word in f:
         password = word.rstrip("\n")
