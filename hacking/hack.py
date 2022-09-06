@@ -65,6 +65,14 @@ def send_n_recv(cl_socket, credentials):
     return json_str, json.loads(response)
 
 
+"""
+#  brute force login password with dictionary and catching exception
+Try all logins with an empty password.
+When finding the login, try out every possible password of length 1.
+When an exception occurs, we know that we found the first letter of the password.
+Use the found login and the found letter to find the second letter of the password.
+Repeat until we receive the "success" message.
+"""
 def bruteforcelp_with_dict(cl_socket, f):
     for word in f:
         password = word.rstrip("\n")
