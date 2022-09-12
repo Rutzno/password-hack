@@ -64,6 +64,7 @@ def send_n_recv(cl_socket, credentials):
 
     response = cl_socket.recv(1024)  # receiving the response
     new_cur_time = time.time()
+    time_passed = new_cur_time - last_time
     response = response.decode()  # decoding from bytes to string
     return json_str, json.loads(response)
 
