@@ -100,7 +100,7 @@ def bflp_with_dict_n_ce(cl_socket, f):
                         response = data[1]
                         # print(data[1], data[2])
                         if data[2] >= 0.1:
-                            # print("exception")
+                            # print("Exception happened during login")
                             password = tmp
                             i = 0
                         elif response["result"] == "Wrong password!":
