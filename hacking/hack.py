@@ -2,11 +2,12 @@ import argparse
 import itertools
 import json
 import socket
+import time
 
 """
 __author__ = "Mack_TB"
 __since__ = "28/8/2021"
-__version__ = "1.0.4"
+__version__ = "1.0.5"
 """
 
 
@@ -58,9 +59,11 @@ def set_credentials(login, password=""):
 
 def send_n_recv(cl_socket, credentials):
     json_str = json.dumps(credentials, indent=4)
+    last_time = time.time()
     cl_socket.send(json_str.encode())  # sending through socket
 
     response = cl_socket.recv(1024)  # receiving the response
+    new_cur_time = time.time()
     response = response.decode()  # decoding from bytes to string
     return json_str, json.loads(response)
 
