@@ -105,9 +105,6 @@ def bflp_with_dict_n_ce(cl_socket, f):
                             i = 0
                         elif response["result"] == "Wrong password!":
                             tmp = password
-                        # elif response["result"] == "Exception happened during login":
-                        #     password = tmp
-                        #     i = 0
                         elif response["result"] == "Connection success!":
                             json_str = data[0]
                             print(json_str)
